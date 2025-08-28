@@ -1,0 +1,115 @@
+@media (max-width: 1000px) {
+
+    h1.título-section {
+        font-size: 3rem;
+    }
+
+    /* Estilo do menu */
+    header {
+        background-image: none;
+        background-color: var(--corAmarela);
+    }
+
+    .menu-desktop {
+        display: none;
+    }
+
+    .btn-menu-mobile,
+    .menu-mobile {
+        display: block;
+    }
+
+    /* Estilo da hero */
+    section.hero {
+        background-image: linear-gradient(to top, var(--corAzul) 90%, var(--corAmarela) 10%);
+    }
+
+    .hero>.interface {
+        text-align: center;
+        gap: 120px;
+        flex-direction: column-reverse;
+    }
+
+    .hero .txt-hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero .txt-hero h1 span {
+        font-size: 3rem;
+    }
+
+    .hero .txt-hero p {
+        font-size: 1rem;
+    }
+
+    .hero .img-hero {
+        max-width: 420px;
+    }
+
+
+    /* Estilo sobre mim */
+    .sobre-mim>.interface {
+        flex-direction: column;
+        gap: 64px;
+    }
+
+    .sobre-mim .img-sobre img {
+        max-width: 300px;
+
+    }
+
+    /* Estilo da seção especialiddes */
+    .skills article {
+        grid-template: 1fr / 1fr 1fr 1fr;
+        overflow: scroll;
+    }
+
+    .skills article::-webkit-scrollbar { /*não aparece a barra de rolagem quando bromos no celular*/
+        display: none;
+    }
+
+    .skills article .box-skills {
+        min-width: 320px;
+    }
+
+    .skills h1 {
+        font-size: 2.4rem;
+    }
+
+    /* Estilo do portfolio */
+    .portfolio .portfolio-container {
+        grid-template: 1fr / 1fr 1fr 1fr;
+        overflow-x: scroll;
+    }
+
+    .portfolio .portfolio-container::-webkit-scrollbar { /*não aparece a barra de rolagem quando bromos no celular*/
+        display: none;
+    }
+
+    .portfolio-container .portfolio-box {
+        min-width: 300px;
+    }
+
+
+    /* Estilo do formulário */
+    .contato>.interface {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .contato form {
+        width: 100%;
+    }
+
+    .contato form .tel-proj {
+        display: block;
+    }
+
+    /* Estilo do rodapé */
+    footer>.interface {
+        flex-direction: column-reverse;
+        gap: 32px;
+        text-align: center;
+    }
+
+}
