@@ -25,9 +25,17 @@
     }
 
     .hero>.interface {
-        text-align: center;
-        gap: 120px;
+        display: flex;
+        /* Ativa o flexbox */
         flex-direction: column-reverse;
+        align-items: center;
+        /* Centraliza horizontalmente */
+        justify-content: center;
+        /* Centraliza verticalmente se houver altura extra */
+        gap: 40px;
+        /* Ajuste de espaçamento */
+        text-align: center;
+        /* Centraliza texto */
     }
 
     .hero .txt-hero h1 {
@@ -42,8 +50,15 @@
         font-size: 1rem;
     }
 
-    .hero .img-hero {
-        max-width: 420px;
+    .hero .img-hero img {
+        max-width: 320px;
+        /* tamanho máximo da imagem no responsivo */
+        width: 100%;
+        /* adapta ao container */
+        height: auto;
+        /* mantém proporção */
+        transform: scale(1);
+        /* remove deslocamento manual do desktop */
     }
 
 
@@ -64,7 +79,8 @@
         overflow: scroll;
     }
 
-    .skills article::-webkit-scrollbar { /*não aparece a barra de rolagem quando bromos no celular*/
+    .skills article::-webkit-scrollbar {
+        /*não aparece a barra de rolagem quando bromos no celular*/
         display: none;
     }
 
@@ -82,7 +98,8 @@
         overflow-x: scroll;
     }
 
-    .portfolio .portfolio-container::-webkit-scrollbar { /*não aparece a barra de rolagem quando bromos no celular*/
+    .portfolio .portfolio-container::-webkit-scrollbar {
+        /*não aparece a barra de rolagem quando bromos no celular*/
         display: none;
     }
 

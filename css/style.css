@@ -160,6 +160,7 @@ section.hero {
 .hero>.interface {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 120px;
 }
 
@@ -168,7 +169,19 @@ section.hero {
 }
 
 .hero .img-hero img {
-    transform: scale(0.9) translateY(-90px); /* 0.9 = 90% do tamanho original, -90px move a imagem para cima. O valor negativo faz ela subir */
+    transform: scale(0.9) translate(-200px, -90px); /* 0.9 = 90% do tamanho original, -90px move a imagem para cima. O valor negativo faz ela subir */
+    position: relative;
+    animation: flutuar 2s ease-in-out infinite alternate;
+}
+
+
+@keyframes flutuar{
+    0%{
+        top: 0;
+    }
+    100%{
+        top: 30px;
+    }
 }
 
 
