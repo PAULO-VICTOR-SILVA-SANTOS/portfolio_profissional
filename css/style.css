@@ -353,6 +353,10 @@ section.portfolio {
     background-image: url(../Projeto/site\ lugar\ das\ tintas.png);
 }
 
+.portfolio-container .projeto2 {
+    background-image: url(../Projeto/site\ estética.png);
+}
+
 /* Estilo do formulário */
 section.contato {
     padding: 80px 0;
