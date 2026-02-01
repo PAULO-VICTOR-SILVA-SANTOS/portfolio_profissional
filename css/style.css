@@ -357,6 +357,10 @@ section.portfolio {
     background-image: url(../Projeto/site\ estética.png);
 }
 
+.portfolio-container .projeto3 {
+    background-image: url(../Projeto/site\site\clone-disneyplus.png);
+}
+
 /* Estilo do formulário */
 section.contato {
     padding: 80px 0;
