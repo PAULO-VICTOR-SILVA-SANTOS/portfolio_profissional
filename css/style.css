@@ -51,6 +51,7 @@ h1.título-section span {
     color: var(--corAmarela);
 }
 
+
 /* Estilo do cabeçalho */
 header {
     background-color: transparent;
@@ -471,4 +472,13 @@ footer .logo-footer img {
     /*diminui a logo do rodapé*/
     max-width: 200px;
     margin-bottom: 16px;
+}
+
+/* Ajuste para o Responsivo (Celular) */
+@media screen and (max-width: 768px) {
+    #portfolio .interface p {
+        padding: 0 5%;         /* Adiciona um respiro nas laterais no celular */
+        font-size: 0.95rem;    /* Reduz levemente a fonte para telas pequenas */
+        text-align: justify;   /* Garante que continue justificado no mobile */
+    }
 }
