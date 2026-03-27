@@ -231,6 +231,7 @@ section.sobre-mim {
 
 .sobre-mim .btn-redes button,
 footer .btn-redes button {
+    margin-top: 20px;
     width: 56px;
     height: 56px;
     font-size: 24px;
@@ -358,7 +359,34 @@ section.portfolio {
 }
 
 .portfolio-container .projeto3 {
-    background-image: url(..//Projeto/site\ clone-disneyplus.png);
+    background-image: url(..//Projeto/site\ clone\ disney.png);
+}
+
+.portfolio-item {
+    display: flexbox;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.github-link {
+    margin-top: 15px;
+    color: #fff; /* Altere para a cor do seu texto */
+    text-decoration: none;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
+}
+
+.github-link i {
+    font-size: 1.2rem;
+}
+
+.github-link:hover {
+    color: #00ff08; /* Uma cor de destaque ao passar o mouse */
+    text-decoration: underline;
 }
 
 /* Estilo do formulário */
