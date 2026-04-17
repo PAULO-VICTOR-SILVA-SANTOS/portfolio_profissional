@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfólio de Paulo Victor — desenvolvimento Full Stack, sites institucionais e interfaces responsivas.">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsivo.css">
-    <title>Meu portifolio</title>
+    <title>Meu portfólio</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,28 +24,31 @@
 
         <div class="interface">
 
-            <section class="logotipo-cabecalho">
-                <img src="logo-paulo.png" alt="Logotipo do site">
-            </section>
+            <a href="#hero" class="logotipo-cabecalho">
+                <img src="logo-paulo.png" alt="Logotipo — início da página">
+            </a>
 
-            <nav class="menu-desktop">
+            <nav class="menu-desktop" aria-label="Navegação principal">
                 <ul>
-                    <li><a href="#hero">Inicio</a></li>
+                    <li><a href="#hero">Início</a></li>
                     <li><a href="#sobre-mim">Sobre mim</a></li>
                     <li><a href="#skills">Habilidades</a></li>
                     <li><a href="#portfolio">Portfólio</a></li>
-                    <li><a href="#contato"><button>Contato</button></a></li>
+                    <li><a href="#contato" class="btn-nav">Contato</a></li>
                 </ul>
             </nav>
 
-            <div class="btn-menu-mobile" id="btn-menu-mobile">
-                <i class="bi bi-list"></i>
-            </div>
+            <button type="button" class="btn-menu-mobile" id="btn-menu-mobile" aria-label="Abrir menu"
+                aria-expanded="false" aria-controls="menu-mobile">
+                <i class="bi bi-list" aria-hidden="true"></i>
+            </button>
 
-            <nav class="menu-mobile" id="menu-mobile">
-                <i class="bi bi-x-lg"></i>
+            <nav class="menu-mobile" id="menu-mobile" aria-label="Menu mobile">
+                <button type="button" class="btn-fechar-menu" aria-label="Fechar menu">
+                    <i class="bi bi-x-lg" aria-hidden="true"></i>
+                </button>
                 <ul>
-                    <li><a href="#hero">Inicio</a></li>
+                    <li><a href="#hero">Início</a></li>
                     <li><a href="#sobre-mim">Sobre mim</a></li>
                     <li><a href="#skills">Habilidades</a></li>
                     <li><a href="#portfolio">Portfólio</a></li>
@@ -61,17 +66,17 @@
             <div class="interface">
 
                 <div class="img-hero">
-                    <img src="unnamed.webp" alt="foto de paulo em desenho">
+                    <img src="unnamed.webp" alt="Ilustração de Paulo Victor">
                 </div>
 
                 <div class="txt-hero">
                     <h1>Ideias digitais. <span>Resultados reais!</span></h1>
                     <p>
-                        Aliando criatividade e lógica para construir o futuro digital. Com background em gestão e foco total 
-                        em desenvolvimento Full Stack, dedico-me a converter requisitos em aplicações reais, 
+                        Aliando criatividade e lógica para construir o futuro digital. Com background em gestão e foco
+                        total
+                        em desenvolvimento Full Stack, dedico-me a converter requisitos em aplicações reais,
                         garantindo que cada projeto seja uma solução sólida e funcional.
                     </p>
-                    <!-- <a href="#"><button>Entre em contato</button></a> -->
                 </div>
 
             </div>
@@ -82,32 +87,41 @@
 
                 <div class="txt-sobre">
 
-                    <h1 class="título-section">Sobre <span>mim</span></h1>
+                    <h2 class="título-section">Sobre <span>mim</span></h2>
                     <p>
-                        Profissional em transição de carreira para a área de Desenvolvimento Full Stack, com histórico profissional em gestão comercial e atendimento ao cliente. Em formação como Desenvolvedor Full Stack pela EBAC e graduando em Análise e Desenvolvimento de Sistemas pela Cruzeiro do Sul Virtual, possui habilidades técnicas em HTML5, CSS3, JavaScript, jQuery, Bootstrap e Git.
-                        Possui experiência prática no desenvolvimento de projeto web institucional, aplicando fundamentos de desenvolvimento front-end responsivo e versionamento de código. Demonstra facilidade de aprendizado, foco em soluções digitais para otimização de processos e busca constante por aprimoramento técnico.
+                        Estou em transição de carreira para Desenvolvimento Full Stack, com histórico em gestão comercial
+                        e atendimento ao cliente. Estou em formação como Desenvolvedor Full Stack pela EBAC e graduando
+                        em Análise e Desenvolvimento de Sistemas pela Cruzeiro do Sul Virtual, com habilidades em HTML5,
+                        CSS3, JavaScript, jQuery, Bootstrap e Git.
+                        Tenho experiência prática em projeto web institucional, com front-end responsivo e versionamento
+                        de código. Busco aprender rápido, entregar soluções digitais que otimizem processos e evoluir
+                        tecnicamente a cada entrega.
                     </p>
 
-                    <P>                        
-                        Destaco o projeto de desenvolvimento da página web da empresa Libânia Estética, onde utilizei linguagens, ferramentas e metodologias como HTML5, CSS, Git para controle de versionamento e fundamentos de 
-                        desenvolvimento front-end responsivo, e o resultado foi a criação de uma interface intuitiva e funcional, capaz de apresentar os serviços estéticos, disponibilizar um cardápio de conveniência e facilitar o contato direto do cliente com a empresa, 
-                        contribuindo para uma melhor experiência do usuário e presença digital do negócio.
-                    </P>
+                    <p>
+                        Destaco o projeto da página da Libânia Estética, em que usei HTML5, CSS, Git e fundamentos de
+                        front-end responsivo para criar uma interface intuitiva que apresenta serviços, um cardápio de
+                        conveniência e canais de contato,
+                        melhorando a experiência do usuário e a presença digital do negócio.
+                    </p>
                     <div>
-                        <a class="github-link" href="https://primeiro-site-estetica.vercel.app/" target="_blank">
-                    <i class="bi bi-browser-safari"></i> Clique aqui para visualizar o projeto Libânia Estética
+                        <a class="github-link" href="https://primeiro-site-estetica.vercel.app/" target="_blank"
+                            rel="noopener noreferrer">
+                            <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Ver projeto Libânia Estética
                         </a>
-                    </div>  
+                    </div>
                     <div class="btn-redes">
-                        <!-- <a href="#"><button><i class="bi bi-instagram"></i></button></a> -->
-                        <a href="https://www.linkedin.com/in/paulo-victor-919a0549/" target="_blank"><button><i class="bi bi-linkedin"></i></button></a>
-                        <a href="https://github.com/PAULO-VICTOR-SILVA-SANTOS" target="_blank"><button><i class="bi bi-github"></i></button></a>
+                        <a href="https://www.linkedin.com/in/paulo-victor-dev-full-stack" target="_blank"
+                            rel="noopener noreferrer" class="btn-icone" aria-label="LinkedIn"><i
+                                class="bi bi-linkedin" aria-hidden="true"></i></a>
+                        <a href="https://github.com/PAULO-VICTOR-SILVA-SANTOS" target="_blank" rel="noopener noreferrer"
+                            class="btn-icone" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
                     </div>
 
                 </div>
 
                 <div class="img-sobre">
-                    <img src="./download.jpeg" alt="Imagem Sobre mim">
+                    <img src="./download.jpeg" alt="Paulo Victor">
                 </div>
 
             </div>
@@ -116,123 +130,164 @@
         <section class="skills" id="skills">
             <div class="interface">
 
-                <h1 class="título-section">Minhas <span>especialidades</span></h1>
+                <h2 class="título-section">Minhas <span>especialidades</span></h2>
 
                 <article>
                     <div class="box-skills">
                         <div class="icon-skills">
-                            <img src="icon-website.webp" alt="Icon de website">
-                            <h2>Criação de <span>sites</span></h2>
+                            <img src="icon-website.webp" alt="">
+                            <h3>Criação de <span>sites</span></h3>
                         </div>
-                        <p>                        
-                        Desenvolvimento de sites institucionais modernos e totalmente responsivos. 
-                        Foco na criação de interfaces intuitivas que fortalecem a presença digital 
-                        do seu negócio e facilitam a comunicação com seus clientes, assim como no 
-                        projeto Libânia Estética.
+                        <p>
+                            Desenvolvimento de sites institucionais modernos e totalmente responsivos.
+                            Foco na criação de interfaces intuitivas que fortalecem a presença digital
+                            do seu negócio e facilitam a comunicação com seus clientes, assim como no
+                            projeto Libânia Estética.
                         </p>
                     </div>
 
                     <div class="box-skills">
                         <div class="icon-skills">
-                            <img src="icon-loja-online.webp" alt="Icon de loja online">
-                            <h2>Loja <span>online</span></h2>
+                            <img src="icon-loja-online.webp" alt="">
+                            <h3>Loja <span>online</span></h3>
                         </div>
                         <p>
-                        Criação de plataformas de vendas focadas na experiência do usuário e na 
-                        facilidade de navegação. Estruturo catálogos de produtos e cardápios de conveniência 
-                        que otimizam o processo de compra e aumentam a conversão de vendas online.
+                            Criação de plataformas de vendas focadas na experiência do usuário e na
+                            facilidade de navegação. Estruturo catálogos de produtos e cardápios de conveniência
+                            que otimizam o processo de compra e aumentam a conversão de vendas online.
                         </p>
                     </div>
 
                     <div class="box-skills">
                         <div class="icon-skills">
-                            <img src="icon-marketing-digital.webp" alt="Icon de marketing digital">
-                            <h2>Marketing <span>Digital</span></h2>
+                            <img src="icon-marketing-digital.webp" alt="">
+                            <h3>Marketing <span>Digital</span></h3>
                         </div>
                         <p>
-                        Integração estratégica entre tecnologia e vendas. Utilizo ferramentas 
-                        digitais para otimizar processos de atendimento e automação, garantindo que 
-                        sua marca tenha visibilidade e que o contato direto com o cliente seja 
-                        rápido e eficiente.
+                            Integração estratégica entre tecnologia e vendas. Utilizo ferramentas
+                            digitais para otimizar processos de atendimento e automação, garantindo que
+                            sua marca tenha visibilidade e que o contato direto com o cliente seja
+                            rápido e eficiente.
                         </p>
                     </div>
                 </article>
 
                 <div class="btn-contato">
-                    <li><a href="#contato"><button>Entre em contato</button></a></li>
+                    <a href="#contato" class="btn-primario">Entre em contato</a>
                 </div>
-
-
 
             </div>
         </section>
 
         <section class="portfolio" id="portfolio">
-    <div class="interface">
-        <h1 class="título-section">Meu <span>portfólio</span></h1>
-        <p>
-            Abaixo apresento uma seleção de projetos que demonstram minha jornada como desenvolvedor 
-            Full Stack. De interfaces institucionais a clones de aplicações complexas, 
-            utilizo tecnologias modernas para construir soluções robustas e intuitivas.
-        </p>
+            <div class="interface">
+                <h2 class="título-section">Meu <span>portfólio</span></h2>
+                <p>
+                    Abaixo apresento uma seleção de projetos que demonstram minha jornada como desenvolvedor
+                    Full Stack. De interfaces institucionais a clones de aplicações complexas,
+                    utilizo tecnologias modernas para construir soluções robustas e intuitivas.
+                </p>
 
-        <article class="portfolio-container">
+                <div class="portfolio-grids" id="portfolio-grids">
 
-            <div class="portfolio-item">
-                <a href="https://site-lugardastintas.vercel.app/" target="_blank">
-                    <div class="portfolio-box projeto1">
-                        <div class="infor-portfolio">Lugar das Tintas</div>
+                    <div class="portfolio-container portfolio-container--principal">
+                        <div class="portfolio-item">
+                            <a href="https://site-lugardastintas.vercel.app/" target="_blank" rel="noopener noreferrer">
+                                <div class="portfolio-box projeto1">
+                                    <div class="infor-portfolio">Lugar das Tintas</div>
+                                </div>
+                            </a>
+                            <a class="github-link" href="https://github.com/PAULO-VICTOR-SILVA-SANTOS/site_lugardastintas"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="bi bi-github" aria-hidden="true"></i> Ver código no GitHub
+                            </a>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <a href="https://primeiro-site-estetica.vercel.app/" target="_blank"
+                                rel="noopener noreferrer">
+                                <div class="portfolio-box projeto2">
+                                    <div class="infor-portfolio">Libânia Estética</div>
+                                </div>
+                            </a>
+                            <a class="github-link"
+                                href="https://github.com/PAULO-VICTOR-SILVA-SANTOS/primeiro_site_estetica" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="bi bi-github" aria-hidden="true"></i> Ver código no GitHub
+                            </a>
+                        </div>
+
+                        <div class="portfolio-item">
+                            <a href="https://clone-disneyplus-orpin-ten.vercel.app/" target="_blank"
+                                rel="noopener noreferrer">
+                                <div class="portfolio-box projeto3">
+                                    <div class="infor-portfolio">Clone Disney+</div>
+                                </div>
+                            </a>
+                            <a class="github-link" href="https://github.com/PAULO-VICTOR-SILVA-SANTOS/clone_disneyplus"
+                                target="_blank" rel="noopener noreferrer">
+                                <i class="bi bi-github" aria-hidden="true"></i> Ver código no GitHub
+                            </a>
+                        </div>
                     </div>
-                </a>
-                <a class="github-link" href="https://github.com/PAULO-VICTOR-SILVA-SANTOS/site_lugardastintas" target="_blank">
-                    <i class="bi bi-github"></i> Ver Código no GitHub
-                </a>
-            </div>
 
-            <div class="portfolio-item">
-                <a href="https://primeiro-site-estetica.vercel.app/" target="_blank">
-                    <div class="portfolio-box projeto2">
-                        <div class="infor-portfolio">Libânia Estética</div>
+                    <div class="portfolio-mostrar-acoes">
+                        <button type="button" id="btn-portfolio-toggle" class="btn-mostrar-mais-projetos"
+                            aria-expanded="false" aria-controls="portfolio-secundaria">
+                            Mostrar mais
+                        </button>
                     </div>
-                </a>
-                <a class="github-link" href="https://github.com/PAULO-VICTOR-SILVA-SANTOS/primeiro_site_estetica" target="_blank">
-                    <i class="bi bi-github"></i> Ver Código no GitHub
-                </a>
-            </div>
 
-            <div class="portfolio-item">
-                <a href="https://clone-disneyplus-orpin-ten.vercel.app/" target="_blank">
-                    <div class="portfolio-box projeto3">
-                        <div class="infor-portfolio">Clone Disney+</div>
+                    <!-- A partir do 4º projeto: oculto até clicar em Mostrar mais -->
+                    <div class="portfolio-container portfolio-container--secundaria" id="portfolio-secundaria"
+                        role="region" aria-label="Mais projetos do portfólio">
+                        <div class="portfolio-item">
+                            <a href="https://efood-restaurantes-eight.vercel.app/" target="_blank"
+                                rel="noopener noreferrer">
+                                <div class="portfolio-box projeto4">
+                                    <div class="infor-portfolio">eFood — Restaurantes</div>
+                                </div>
+                            </a>
+                            <a class="github-link"
+                                href="https://github.com/PAULO-VICTOR-SILVA-SANTOS/efood_restaurantes" target="_blank"
+                                rel="noopener noreferrer">
+                                <i class="bi bi-github" aria-hidden="true"></i> Ver código no GitHub
+                            </a>
+                        </div>
                     </div>
-                </a>
-                <a class="github-link" href="https://github.com/PAULO-VICTOR-SILVA-SANTOS/clone_disneyplus" target="_blank">
-                    <i class="bi bi-github"></i> Ver Código no GitHub
-                </a>
-            </div>
 
-        </article>
-    </div>
-</section>
+                </div>
+            </div>
+        </section>
 
         <section class="contato" id="contato">
 
             <div class="interface">
 
                 <div class="txt-contato">
-                    <h1 class="título-section">Entre em <span>contato</span></h1>
-                    <p><i class="bi bi-envelope-at"></i> paulinhovictor852@gmail.com</p>
-                    <p><i class="bi bi-whatsapp"></i> (83) 99915-9349</p>
+                    <h2 class="título-section">Entre em <span>contato</span></h2>
+                    <p><i class="bi bi-envelope-at" aria-hidden="true"></i> paulinhovictor852@gmail.com</p>
+                    <p><i class="bi bi-whatsapp" aria-hidden="true"></i> (83) 99915-9349</p>
                 </div>
 
-                <form action="#">
-                    <input type="text" name="#" id="nome" placeholder="Seu nome completo">
-                    <input type="email" name="#" id="email" placeholder="Seu email">
+                <form action="#" method="post">
+                    <label class="visually-hidden" for="nome">Nome completo</label>
+                    <input type="text" name="nome" id="nome" placeholder="Seu nome completo" autocomplete="name">
+
+                    <label class="visually-hidden" for="email">E-mail</label>
+                    <input type="email" name="email" id="email" placeholder="Seu e-mail" autocomplete="email">
+
                     <div class="tel-proj">
-                        <input type="tel" name="#" id="telefone" placeholder="Seu WhatsApp">
-                        <input type="text" name="#" id="projeto" placeholder="Qual site quer criar?">
+                        <label class="visually-hidden" for="telefone">WhatsApp</label>
+                        <input type="tel" name="telefone" id="telefone" placeholder="Seu WhatsApp"
+                            autocomplete="tel">
+
+                        <label class="visually-hidden" for="projeto">Tipo de projeto</label>
+                        <input type="text" name="projeto" id="projeto" placeholder="Qual site quer criar?">
                     </div>
-                    <textarea name="#" id="mensagem" placeholder="Fale mais sobre sua idéia"></textarea>
+
+                    <label class="visually-hidden" for="mensagem">Mensagem</label>
+                    <textarea name="mensagem" id="mensagem" placeholder="Fale mais sobre sua ideia"></textarea>
 
                     <div class="btn-enviar">
                         <input type="submit" value="Enviar">
@@ -249,22 +304,23 @@
         <div class="interface">
 
             <div class="logo-footer">
-                <img src="logo-paulo.png" alt="logo rodapé">
-                <p>CNPJ:00.000.000/0000-00</p>
-                <P>Todos os direitos reservados</P>
+                <img src="logo-paulo.png" alt="Logotipo">
+                <p>Todos os direitos reservados.</p>
             </div>
 
             <div class="btn-redes">
-                <!-- <a href="#"><button><i class="bi bi-instagram"></i></button></a> -->
-                <a href="https://www.linkedin.com/in/paulo-victor-dev-full-stack" target="_blank"><button><i class="bi bi-linkedin"></i></button></a>
-                <a href="https://github.com/PAULO-VICTOR-SILVA-SANTOS" target="_blank"><button><i class="bi bi-github"></i></button></a>
+                <a href="https://www.linkedin.com/in/paulo-victor-dev-full-stack" target="_blank"
+                    rel="noopener noreferrer" class="btn-icone" aria-label="LinkedIn"><i class="bi bi-linkedin"
+                        aria-hidden="true"></i></a>
+                <a href="https://github.com/PAULO-VICTOR-SILVA-SANTOS" target="_blank" rel="noopener noreferrer"
+                    class="btn-icone" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
             </div>
 
         </div>
     </footer>
 
-    <script src="js/portfolio.js"></script>
     <script src="js/menu_mobile.js"></script>
+    <script src="js/portfolio_toggle.js"></script>
 
 </body>
 

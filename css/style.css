@@ -15,10 +15,13 @@
 
 html {
     scroll-behavior: smooth;
+    /* Evita que títulos de seção fiquem escondidos atrás do header fixo ao usar links #âncora */
+    scroll-padding-top: 96px;
 }
 
 body {
     background-color: var(--corAzulEscuro);
+    overflow-x: hidden;
 }
 
 .interface {
@@ -42,12 +45,26 @@ button:hover {
     color: var(--corAzul);
 }
 
-h1.título-section {
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+h1.título-section,
+h2.título-section {
     font-size: 4rem;
     color: var(--corBranca);
 }
 
-h1.título-section span {
+h1.título-section span,
+h2.título-section span {
     color: var(--corAmarela);
 }
 
@@ -59,13 +76,19 @@ header {
     position: fixed;
     width: 100%;
     background-image: linear-gradient(to left, var(--corAzul) 30%, var(--corAmarela) 70%);
-    z-index: 99999999;
+    z-index: 1000;
 }
 
 header>.interface {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+header .logotipo-cabecalho {
+    display: inline-block;
+    line-height: 0;
+    text-decoration: none;
 }
 
 header .logotipo-cabecalho img {
@@ -101,6 +124,14 @@ header nav.menu-desktop button {
 .btn-menu-mobile,
 .menu-mobile {
     display: none;
+}
+
+.btn-menu-mobile {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    line-height: 0;
 }
 
 .btn-menu-mobile i {
@@ -140,10 +171,18 @@ header nav.menu-desktop button {
     color: var(--corAzul);
 }
 
-.menu-mobile .bi-x-lg {
+.btn-fechar-menu {
+    background: transparent;
+    border: none;
+    padding: 24px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+}
+
+.btn-fechar-menu .bi-x-lg {
     font-size: 2rem;
     color: var(--corAmarela);
-    padding: 24px;
 }
 
 .menu-mobile.abrir-menu {
@@ -230,13 +269,29 @@ section.sobre-mim {
     margin: 24px 0;
 }
 
-.sobre-mim .btn-redes button,
-footer .btn-redes button {
+.sobre-mim .btn-redes .btn-icone,
+footer .btn-redes .btn-icone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     margin-top: 20px;
     width: 56px;
     height: 56px;
     font-size: 24px;
     margin-right: 8px;
+    border: 2px solid var(--corBranca);
+    border-radius: 8px;
+    color: var(--corBranca);
+    text-decoration: none;
+    box-sizing: border-box;
+    transition: .5s;
+}
+
+.sobre-mim .btn-redes .btn-icone:hover,
+footer .btn-redes .btn-icone:hover {
+    background-color: var(--corAmarela);
+    color: var(--corAzul);
+    border-color: var(--corAmarela);
 }
 
 /* Estilo da seção especialiddes */
@@ -269,11 +324,14 @@ section.skills {
     max-width: 80px;
 }
 
-.icon-skills h2 {
+.icon-skills h3 {
     color: var(--corBranca);
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 0;
 }
 
-.icon-skills h2 span {
+.icon-skills h3 span {
     color: var(--corAmarela);
 }
 
@@ -287,9 +345,25 @@ section.skills {
     text-align: center;
 }
 
-.skills .btn-contato button {
+.skills .btn-contato .btn-primario {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 200px;
     height: 48px;
+    border: 2px solid var(--corBranca);
+    border-radius: 8px;
+    color: var(--corBranca);
+    text-decoration: none;
+    font-size: 1.1rem;
+    box-sizing: border-box;
+    transition: .5s;
+}
+
+.skills .btn-contato .btn-primario:hover {
+    background-color: var(--corAmarela);
+    color: var(--corAzul);
+    border-color: var(--corAmarela);
 }
 
 /* Estilo do portfolio */
@@ -302,15 +376,74 @@ section.portfolio {
     margin: 16px 0 48px 0;
 }
 
+.portfolio-grids {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: stretch;
+}
+
 .portfolio .portfolio-container {
     display: grid;
-    grid-template: 1fr / 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
+    align-items: start;
+    width: 100%;
+}
+
+.portfolio .portfolio-container--secundaria {
+    display: none;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    align-items: start;
+    width: 100%;
+}
+
+.portfolio .portfolio-container--secundaria.is-visible {
+    display: grid;
+}
+
+.portfolio-mostrar-acoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.btn-mostrar-mais-projetos {
+    min-width: 200px;
+    max-width: 280px;
+    width: 100%;
+    min-height: 48px;
+    padding: 0 24px;
+    border: 2px solid var(--corAmarela);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--corBranca);
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: .35s;
+}
+
+.btn-mostrar-mais-projetos:hover {
+    background-color: var(--corAmarela);
+    color: var(--corAzul);
+}
+
+.portfolio-item > a:first-of-type {
+    display: block;
+    width: 100%;
+    line-height: 0;
 }
 
 .portfolio-container .portfolio-box {
-    min-width: 200px;
-    height: 400px;
+    width: 100%;
+    min-width: 0;
+    height: 0;
+    padding-top: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
     border: 2px solid var(--corAmarela);
     border-radius: 16px;
 
@@ -323,10 +456,7 @@ section.portfolio {
 
 .portfolio-container .portfolio-box .infor-portfolio {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background-color: #2d047491;
     border-radius: 16px;
 
@@ -352,7 +482,7 @@ section.portfolio {
 
 
 .portfolio-container .projeto1 {
-    background-image: url(../Projeto/site\ lugar\ das\ tintas.png);
+    background-image: url(../Projeto/site\ lugar\ das\ tintas..png);
 }
 
 .portfolio-container .projeto2 {
@@ -360,14 +490,29 @@ section.portfolio {
 }
 
 .portfolio-container .projeto3 {
-    background-image: url(..//Projeto/site\ clone\ disney.png);
+    background-image: url(../Projeto/site\ clone\ disney.png);
+}
+
+.portfolio-container .projeto4 {
+    background-color: var(--corAzulEscuro);
+    background-image: url(../Projeto/site\ restaurante.png);
+    background-repeat: no-repeat;
+    /* Largura igual ao card (laterais alinhadas); altura proporcional para o pan vertical */
+    background-size: 100% auto;
+    background-position-x: center;
+    background-position-y: 0%;
 }
 
 .portfolio-item {
-    display: flexbox;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 30px;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    box-sizing: border-box;
 }
 
 .github-link {

@@ -1,7 +1,23 @@
 @media (max-width: 1000px) {
 
-    h1.título-section {
+    html {
+        scroll-padding-top: 88px;
+    }
+
+    h1.título-section,
+    h2.título-section {
         font-size: 3rem;
+    }
+
+    /* Hero: menos espaço livre no topo em tablets/celulares */
+    section.hero {
+        padding-top: 140px;
+    }
+
+    /* iOS: evita zoom automático ao focar campos (tamanho mínimo 16px) */
+    .contato form input,
+    .contato form textarea {
+        font-size: 16px;
     }
 
     /* Estilo do menu */
@@ -77,6 +93,7 @@
     .skills article {
         grid-template: 1fr / 1fr 1fr 1fr;
         overflow: scroll;
+        scrollbar-width: none;
     }
 
     .skills article::-webkit-scrollbar {
@@ -88,18 +105,29 @@
         min-width: 320px;
     }
 
-    .skills h1 {
+    .skills h2.título-section {
         font-size: 2.4rem;
     }
 
     /* Estilo do portfolio */
-    .portfolio .portfolio-container {
+    .portfolio .portfolio-container--principal {
         grid-template: 1fr / 1fr 1fr 1fr;
         overflow-x: scroll;
+        scrollbar-width: none;
     }
 
-    .portfolio .portfolio-container::-webkit-scrollbar {
+    .portfolio .portfolio-container--principal::-webkit-scrollbar {
         /*não aparece a barra de rolagem quando bromos no celular*/
+        display: none;
+    }
+
+    .portfolio .portfolio-container--secundaria {
+        grid-template: 1fr / 1fr 1fr 1fr;
+        overflow-x: scroll;
+        scrollbar-width: none;
+    }
+
+    .portfolio .portfolio-container--secundaria::-webkit-scrollbar {
         display: none;
     }
 
@@ -129,4 +157,33 @@
         text-align: center;
     }
 
+}
+
+/* Celulares estreitos: títulos e hero um pouco mais compactos */
+@media (max-width: 480px) {
+
+    html {
+        scroll-padding-top: 80px;
+    }
+
+    h1.título-section,
+    h2.título-section {
+        font-size: 2.25rem;
+    }
+
+    .hero .txt-hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero .txt-hero h1 span {
+        font-size: 2.35rem;
+    }
+
+    .skills h2.título-section {
+        font-size: 2rem;
+    }
+
+    section.hero {
+        padding-top: 120px;
+    }
 }
