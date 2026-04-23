@@ -503,6 +503,21 @@ section.portfolio {
     background-position-y: 0%;
 }
 
+.portfolio-container .projeto5 {
+    background-color: var(--corAzulEscuro);
+    /* Aspas: nome do arquivo com espaços */
+    background-image: url("../Projeto/site thiago castro.png");
+    background-repeat: no-repeat;
+    /* Imagem menor: arte inteira centralizada no card (faixas usam --corAzulEscuro) */
+    background-size: contain;
+    background-position: center center;
+}
+
+.portfolio-container .portfolio-box.projeto5:hover {
+    /* Com contain, o pan dos outros cards não melhora o visual */
+    background-position: center center;
+}
+
 .portfolio-item {
     display: flex;
     flex-direction: column;
