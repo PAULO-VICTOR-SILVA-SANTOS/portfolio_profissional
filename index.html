@@ -1,341 +1,620 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<!-- saved from url=(0066)file:///C:/Users/Windows10/Downloads/portfolio-paulo-victor_4.html -->
+<html lang="pt-BR"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Portfólio de Paulo Victor — desenvolvimento Full Stack, sites institucionais e interfaces responsivas.">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsivo.css">
-    <title>Meu portfólio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paulo Victor — Front-End Developer</title>
+<link href="./Paulo Victor — Front-End Developer_files/css2" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#04090e;--surface:#080f18;--surface2:#0c1622;--card:#0a1420;
+  --cyan:#00d4ff;--cyan-dim:#0aa6c4;--glow:rgba(0,212,255,0.13);
+  --text:#ddeeff;--text2:#8aaabb;--muted:#4a6a7a;
+  --border:rgba(0,212,255,0.11);--border2:rgba(0,212,255,0.22);
+  --r-card:14px;--r-pill:100px;
+  --display:'Outfit',sans-serif;--body:'Space Grotesk',sans-serif;--mono:'JetBrains Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--surface)}::-webkit-scrollbar-thumb{background:var(--cyan-dim);border-radius:3px}
+a{color:inherit;text-decoration:none}
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
-        rel="stylesheet">
+.grid-tex{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(0,212,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,255,.045) 1px,transparent 1px);background-size:54px 54px;-webkit-mask-image:radial-gradient(ellipse 75% 80% at 55% 45%,#000 10%,transparent 75%);mask-image:radial-gradient(ellipse 75% 80% at 55% 45%,#000 10%,transparent 75%)}
 
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 48px;background:rgba(4,9,14,.78);border-bottom:1px solid var(--border);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.logo{font-family:var(--mono);font-size:.9rem;color:var(--cyan);display:flex;align-items:center;gap:2px}
+.logo .d{color:var(--muted)}
+.nav-links{display:flex;gap:4px}
+.nl{font-family:var(--mono);font-size:.74rem;color:var(--text2);letter-spacing:.04em;padding:7px 15px;border-radius:8px;cursor:pointer;background:none;border:1px solid transparent;transition:all .22s}
+.nl:hover,.nl.on{color:var(--cyan);background:rgba(0,212,255,.06);border-color:var(--border)}
+.nav-cta{font-family:var(--mono);font-size:.74rem;color:var(--cyan);letter-spacing:.04em;padding:7px 18px;border-radius:8px;border:1px solid var(--border2);background:rgba(0,212,255,.05);cursor:pointer;transition:all .22s}
+.nav-cta:hover{background:rgba(0,212,255,.14);box-shadow:0 0 18px var(--glow)}
+
+.hero{min-height:100vh;display:flex;align-items:center;padding:90px 0 60px;position:relative;overflow:hidden}
+.hero-glow{position:absolute;top:-160px;right:-140px;width:760px;height:760px;border-radius:50%;background:radial-gradient(circle,var(--glow) 0%,transparent 62%);pointer-events:none;animation:breathe 9s ease-in-out infinite alternate}
+.hero-glow2{position:absolute;bottom:-220px;left:-160px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(0,212,255,.06) 0%,transparent 60%);pointer-events:none;animation:breathe 11s ease-in-out 1.5s infinite alternate-reverse}
+@keyframes breathe{from{transform:scale(1);opacity:.85}to{transform:scale(1.12);opacity:1}}
+.hero-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:0 48px;width:100%;display:grid;grid-template-columns:1fr 372px;gap:56px;align-items:center}
+.eyebrow{font-family:var(--mono);font-size:.78rem;color:var(--cyan);letter-spacing:.05em;display:flex;align-items:center;gap:10px;margin-bottom:22px}
+.eyebrow::before{content:'';width:30px;height:1px;background:linear-gradient(90deg,var(--cyan),transparent)}
+.hero h1{font-family:var(--display);font-size:clamp(2.9rem,5.4vw,5rem);font-weight:800;letter-spacing:-.04em;line-height:1.04;color:var(--text);margin-bottom:8px}
+.name-grad{background:linear-gradient(105deg,var(--cyan) 0%,#5eead4 55%,#a78bfa 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-role{font-family:var(--mono);font-size:1.18rem;color:var(--text2);margin-bottom:24px;min-height:1.7em}
+.blink{display:inline-block;width:2px;height:1.05em;background:var(--cyan);margin-left:3px;vertical-align:middle;animation:bl 1.05s step-end infinite}
+@keyframes bl{0%,100%{opacity:1}50%{opacity:0}}
+.hero-desc{font-size:1rem;color:var(--text2);line-height:1.8;max-width:490px;margin-bottom:38px;padding-left:16px;border-left:1px solid var(--border2)}
+.hero-btns{display:flex;gap:13px;flex-wrap:wrap;margin-bottom:42px}
+.btn-main{display:inline-flex;align-items:center;gap:8px;background:var(--cyan);color:#04090e;font-family:var(--body);font-weight:700;font-size:.9rem;padding:12px 28px;border-radius:var(--r-pill);border:none;cursor:pointer;transition:all .22s;box-shadow:0 0 24px var(--glow)}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(0,212,255,.55),0 0 60px rgba(0,212,255,.22)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:rgba(0,212,255,.04);color:var(--text);font-family:var(--body);font-weight:500;font-size:.9rem;padding:12px 24px;border-radius:var(--r-pill);border:1px solid var(--border2);cursor:pointer;transition:all .22s}
+.btn-ghost:hover{border-color:var(--cyan);color:var(--cyan);box-shadow:0 0 18px var(--glow)}
+.socials{display:flex;gap:9px}
+.soc{width:42px;height:42px;border-radius:11px;border:1px solid var(--border);background:var(--card);display:flex;align-items:center;justify-content:center;color:var(--text2);transition:all .22s}
+.soc:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-3px);box-shadow:0 0 18px var(--glow)}
+.soc svg{width:17px;height:17px}
+
+.terminal{background:var(--surface);border:1px solid var(--border2);border-radius:16px;overflow:hidden;box-shadow:0 0 40px rgba(0,212,255,.06),0 24px 60px rgba(0,0,0,.5);backdrop-filter:blur(12px)}
+.term-bar{background:var(--surface2);padding:12px 16px;display:flex;align-items:center;gap:7px;border-bottom:1px solid var(--border)}
+.d-r{width:11px;height:11px;border-radius:50%;background:#ff5f57}.d-y{width:11px;height:11px;border-radius:50%;background:#ffbd2e}.d-g{width:11px;height:11px;border-radius:50%;background:#28c840}
+.term-title{font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-left:8px}
+.term-body{padding:22px}
+.tl{font-family:var(--mono);font-size:.79rem;line-height:1.95}
+.tk{color:#a78bfa}.ts{color:#5eead4}.tb{color:#ff9ec7}.tc{color:var(--cyan)}.td{color:var(--muted)}
+.term-hr{height:1px;background:var(--border);margin:14px 0}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.stat{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:12px 14px}
+.stat .n{font-family:var(--mono);font-size:1.4rem;font-weight:500;color:var(--cyan)}
+.stat .l{font-size:.66rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-top:1px}
+.avail{display:flex;align-items:center;gap:8px;margin-top:13px;background:rgba(0,212,255,.06);border:1px solid var(--border2);border-radius:10px;padding:10px 14px;font-family:var(--mono);font-size:.72rem;color:var(--cyan)}
+.pulse{width:6px;height:6px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan);animation:bl 2s infinite}
+
+.section{padding:96px 0;position:relative}
+.wrap{max-width:1200px;margin:0 auto;padding:0 48px;position:relative;z-index:1}
+.sep{position:relative;height:1px;border:none;background:var(--border);margin:0 auto;max-width:1200px}
+.sep::after{content:'';position:absolute;top:0;left:48px;width:120px;height:1px;background:linear-gradient(90deg,var(--cyan),transparent)}
+.sec-eye{font-family:var(--mono);font-size:.72rem;color:var(--cyan);letter-spacing:.08em;display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.sec-eye::before{content:'';width:24px;height:1px;background:linear-gradient(90deg,var(--cyan),transparent)}
+.sec-title{font-family:var(--display);font-size:clamp(2rem,3vw,2.7rem);font-weight:800;letter-spacing:-.035em;color:var(--text);line-height:1.1}
+.sec-desc{font-size:.95rem;color:var(--text2);margin-top:10px;max-width:500px;line-height:1.7}
+
+.sobre-grid{display:grid;grid-template-columns:280px 1fr;gap:64px;align-items:start;margin-top:52px}
+.photo-wrap{position:relative}
+.sphoto{width:100%;border-radius:var(--r-card);display:block;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--border2);filter:contrast(1.05) saturate(.95)}
+.photo-glow{position:absolute;inset:0;border-radius:var(--r-card);background:linear-gradient(160deg,var(--glow),transparent 55%);pointer-events:none}
+.photo-tag{position:absolute;bottom:-16px;right:-16px;background:var(--surface);border:1px solid var(--border2);border-radius:12px;padding:14px 18px;text-align:center;box-shadow:0 0 24px rgba(0,212,255,.08)}
+.photo-tag .n{font-family:var(--mono);font-size:1.5rem;font-weight:500;color:var(--cyan)}
+.photo-tag .l{font-size:.64rem;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
+.sobre-p{font-size:.97rem;color:var(--text2);line-height:1.88;margin-bottom:16px}
+.sobre-p strong{color:var(--text);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.chip{font-family:var(--mono);font-size:.72rem;padding:6px 15px;border-radius:var(--r-pill);border:1px solid var(--border);color:var(--text2);background:var(--card);transition:all .2s}
+.chip:hover{border-color:var(--border2);color:var(--text)}
+.chip.hi{border-color:var(--border2);color:var(--cyan);background:rgba(0,212,255,.06)}
+
+.sk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px}
+.sk-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r-card);padding:26px;transition:all .25s;position:relative;overflow:hidden}
+.sk-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,var(--cyan),transparent);opacity:0;transition:opacity .25s}
+.sk-card:hover{border-color:var(--border2);transform:translateY(-4px);box-shadow:0 0 30px rgba(0,212,255,.07)}
+.sk-card:hover::before{opacity:1}
+.sk-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--border)}
+.sk-cat{font-family:var(--display);font-size:1rem;font-weight:700;color:var(--text)}
+.sk-n{font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+.sk-items{display:flex;flex-wrap:wrap;gap:8px}
+.sk-item{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:.76rem;padding:5px 11px;border-radius:8px;background:var(--surface2);border:1px solid var(--border);color:var(--text);transition:all .18s}
+.sk-item:hover{border-color:var(--border2);background:rgba(0,212,255,.05)}
+.sk-item img{width:14px;height:14px;object-fit:contain}
+.sk-item img.inv{filter:invert(.7)}
+
+.proj-wrap{margin-top:48px}
+.featured{display:grid;grid-template-columns:1.1fr 1fr;background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-bottom:18px;transition:all .25s}
+.featured:hover{border-color:var(--border2);box-shadow:0 0 40px rgba(0,212,255,.08)}
+.f-shot{position:relative;overflow:hidden;min-height:300px;background:var(--surface2)}
+.f-shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .6s ease}
+.featured:hover .f-shot img{transform:scale(1.04)}
+.f-shot-ov{position:absolute;inset:0;background:linear-gradient(115deg,transparent 45%,rgba(10,20,32,.55));pointer-events:none}
+.f-num{position:absolute;right:18px;bottom:10px;font-family:var(--mono);font-size:4.5rem;font-weight:500;color:rgba(0,212,255,.07);line-height:1;user-select:none;pointer-events:none}
+.fallback{width:100%;height:100%;min-height:300px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:linear-gradient(135deg,rgba(0,212,255,.07),transparent 60%)}
+.fb-emoji{font-size:3rem;filter:grayscale(.2)}
+.fb-txt{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.f-body{padding:32px;display:flex;flex-direction:column;justify-content:space-between;border-left:1px solid var(--border)}
+.f-tag{font-family:var(--mono);font-size:.68rem;color:var(--cyan);letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+.f-title{font-family:var(--display);font-size:1.4rem;font-weight:700;color:var(--text);letter-spacing:-.02em;margin-bottom:4px}
+.f-sub{font-family:var(--mono);font-size:.8rem;color:var(--muted);margin-bottom:16px}
+.f-desc{font-size:.9rem;color:var(--text2);line-height:1.75;margin-bottom:22px}
+.f-techs{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:24px}
+.f-tech{font-family:var(--mono);font-size:.7rem;padding:4px 11px;border-radius:7px;background:var(--surface2);border:1px solid var(--border);color:var(--cyan);display:inline-flex;align-items:center;gap:6px}
+.f-tech .dot{width:5px;height:5px;border-radius:50%;background:var(--cyan)}
+.f-links{display:flex;gap:10px}
+.fl{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:.78rem;padding:9px 18px;border-radius:var(--r-pill);cursor:pointer;transition:all .22s}
+.fl.c{background:var(--cyan);color:#04090e;font-weight:500}
+.fl.c:hover{box-shadow:0 0 22px var(--glow);transform:translateY(-1px)}
+.fl.g{border:1px solid var(--border2);color:var(--text2);background:rgba(0,212,255,.04)}
+.fl.g:hover{border-color:var(--cyan);color:var(--cyan)}
+
+.proj-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.pc{background:var(--card);border:1px solid var(--border);border-radius:var(--r-card);overflow:hidden;transition:all .25s}
+.pc:hover{border-color:var(--border2);transform:translateY(-5px);box-shadow:0 0 36px rgba(0,212,255,.08),0 18px 48px rgba(0,0,0,.4)}
+.pc-shot{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--surface2)}
+.pc-shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .6s}
+.pc:hover .pc-shot img{transform:scale(1.06)}
+.pc-fallback{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;background:linear-gradient(135deg,rgba(0,212,255,.06),transparent 60%)}
+.pc-fb-emoji{font-size:2.3rem;filter:grayscale(.2)}
+.pc-fb-txt{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.pc-ov{position:absolute;inset:0;background:rgba(4,9,14,.55);display:flex;align-items:center;justify-content:center;gap:9px;opacity:0;transition:opacity .25s;backdrop-filter:blur(3px)}
+.pc:hover .pc-ov{opacity:1}
+.ov-btn{display:inline-flex;align-items:center;gap:5px;font-family:var(--mono);font-size:.74rem;font-weight:500;padding:8px 15px;border-radius:var(--r-pill);cursor:pointer;transition:transform .18s}
+.ov-btn:hover{transform:scale(1.05)}
+.ov-btn.c{background:var(--cyan);color:#04090e}
+.ov-btn.g{border:1px solid var(--border2);color:var(--text);background:rgba(0,212,255,.08)}
+.pc-meta{padding:9px 16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border)}
+.pc-num{font-family:var(--mono);font-size:.68rem;color:var(--muted)}
+.pc-ico{display:flex;gap:7px}
+.pc-ico a{width:29px;height:29px;border-radius:7px;border:1px solid var(--border);background:var(--surface2);display:flex;align-items:center;justify-content:center;color:var(--muted);transition:all .18s}
+.pc-ico a:hover{border-color:var(--cyan);color:var(--cyan)}
+.pc-ico svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.pc-body{padding:16px 18px 20px}
+.pc-title{font-family:var(--display);font-size:1.02rem;font-weight:700;color:var(--text);letter-spacing:-.01em;margin-bottom:3px}
+.pc-sub{font-family:var(--mono);font-size:.67rem;color:var(--muted);margin-bottom:11px}
+.pc-desc{font-size:.84rem;color:var(--text2);line-height:1.7;margin-bottom:15px}
+.pc-techs{display:flex;flex-wrap:wrap;gap:6px}
+.pc-tech{font-family:var(--mono);font-size:.66rem;padding:3px 9px;border-radius:6px;border:1px solid var(--border);background:var(--surface2);color:var(--cyan)}
+
+.ct-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:52px}
+.ct-title{font-family:var(--display);font-size:1.5rem;font-weight:700;color:var(--text);letter-spacing:-.02em;margin-bottom:12px;line-height:1.3}
+.ct-desc{font-size:.93rem;color:var(--text2);line-height:1.75;margin-bottom:30px}
+.ct-items{display:flex;flex-direction:column;gap:10px}
+.ct-item{display:flex;align-items:center;gap:14px;background:var(--card);border:1px solid var(--border);border-radius:11px;padding:13px 16px;transition:all .2s}
+.ct-item:hover{border-color:var(--border2);box-shadow:0 0 20px rgba(0,212,255,.05)}
+.ct-ico{width:38px;height:38px;border-radius:10px;flex-shrink:0;background:rgba(0,212,255,.08);border:1px solid var(--border2);display:flex;align-items:center;justify-content:center;font-size:.9rem}
+.ct-l{font-family:var(--mono);font-size:.64rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+.ct-v{font-size:.88rem;color:var(--text);font-weight:500;margin-top:1px}
+.ct-form{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:30px}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fg{margin-bottom:12px}
+.fg label{display:block;font-family:var(--mono);font-size:.64rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.fg input,.fg textarea,.fg select{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:9px;color:var(--text);font-family:var(--body);font-size:.88rem;padding:10px 14px;outline:none;transition:border-color .2s;-webkit-appearance:none}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--cyan);box-shadow:0 0 14px var(--glow)}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--muted)}
+.fg textarea{resize:vertical;min-height:104px}
+.fg select option{background:#0c1622;color:var(--text)}
+.btn-send{width:100%;padding:13px;border-radius:var(--r-pill);background:var(--cyan);color:#04090e;border:none;cursor:pointer;font-family:var(--mono);font-size:.86rem;font-weight:500;transition:all .22s;box-shadow:0 0 22px var(--glow)}
+.btn-send:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(0,212,255,.5),0 0 60px rgba(0,212,255,.2)}
+
+.footer{border-top:1px solid var(--border);padding:28px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.f-logo{font-family:var(--mono);font-size:.82rem;color:var(--cyan)}
+.f-copy{font-family:var(--mono);font-size:.68rem;color:var(--muted)}
+.f-links{display:flex;gap:22px}
+.f-links a{font-family:var(--mono);font-size:.68rem;color:var(--muted);transition:color .18s}
+.f-links a:hover{color:var(--cyan)}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:1024px){
+  .nav{padding:0 28px}
+  .hero-inner{grid-template-columns:1fr;padding:0 28px}
+  .terminal{display:none}
+  .wrap{padding:0 28px}
+  .sep::after{left:28px}
+  .sobre-grid{grid-template-columns:1fr}
+  .photo-wrap{display:none}
+  .sk-grid{grid-template-columns:1fr 1fr}
+  .featured{grid-template-columns:1fr}
+  .f-body{border-left:none;border-top:1px solid var(--border)}
+  .ct-grid{grid-template-columns:1fr}
+  .footer{padding:24px 28px}
+}
+@media(max-width:680px){
+  .nav-links{display:none}
+  .sk-grid{grid-template-columns:1fr}
+  .proj-grid{grid-template-columns:1fr}
+  .frow{grid-template-columns:1fr}
+  .footer{flex-direction:column;align-items:flex-start}
+}
+</style>
 </head>
-
 <body>
 
-    <header>
+<nav class="nav">
+  <div class="logo"><span class="d">~/</span>paulo-victor<span class="d">.dev</span></div>
+  <div class="nav-links">
+    <button class="nl" data-go="sobre">sobre</button>
+    <button class="nl" data-go="skills">skills</button>
+    <button class="nl" data-go="projetos">projetos</button>
+  </div>
+  <button class="nav-cta" data-go="contato">contato()</button>
+</nav>
 
-        <div class="interface">
+<section class="hero" id="hero">
+  <div class="grid-tex"></div><div class="hero-glow"></div><div class="hero-glow2"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">$ whoami</div>
+      <h1><span class="name-grad">Paulo Victor</span></h1>
+      <div class="hero-role"><span id="typed">React Dev</span><span class="blink"></span></div>
+      <p class="hero-desc">Desenvolvedor Front-End com conhecimentos em Full Stack e background em gestão. Crio aplicações web responsivas com React, TypeScript e JavaScript, focadas em performance e experiência do usuário.</p>
+      <div class="hero-btns">
+        <a href="file:///C:/Users/Windows10/Downloads/portfolio-paulo-victor_4.html#projetos" class="btn-main" data-go="projetos"><svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M2 2h12v12H2zm1 1v10h10V3H3zm1 2h8v1H4zm0 2h6v1H4zm0 2h5v1H4z"></path></svg>ver projetos</a>
+        <a href="file:///C:/Users/Windows10/Downloads/portfolio-paulo-victor_4.html#contato" class="btn-ghost" data-go="contato"><svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M1 3h14v10H1zm1.5 1L8 8l5.5-4zM2 5.2V12h12V5.2L8 9.2z"></path></svg>entrar em contato</a>
+      </div>
+      <div class="socials">
+        <a href="https://linkedin.com/in/paulo-victor-dev-full-stack" target="_blank" class="soc" title="LinkedIn"><svg viewBox="0 0 24 24" width="17" height="17"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" fill="currentColor"></path><circle cx="4" cy="4" r="2" fill="currentColor"></circle></svg></a>
+        <a href="https://github.com/PAULO-VICTOR-SILVA-SANTOS" target="_blank" class="soc" title="GitHub"><svg viewBox="0 0 24 24" width="17" height="17"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
+        <a href="mailto:paulinhovictor852@gmail.com" class="soc" title="E-mail"><svg viewBox="0 0 24 24" width="17" height="17"><rect x="2" y="4" width="20" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"></rect><path d="M22 7l-10 7L2 7" fill="none" stroke="currentColor" stroke-width="2"></path></svg></a>
+        <a href="https://wa.me/5583999159349" target="_blank" class="soc" title="WhatsApp"><svg viewBox="0 0 24 24" width="17" height="17"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" fill="currentColor"></path></svg></a>
+      </div>
+    </div>
 
-            <a href="#hero" class="logotipo-cabecalho">
-                <img src="logo-paulo.png" alt="Logotipo — início da página">
-            </a>
+    <div class="terminal">
+      <div class="term-bar"><div class="d-r"></div><div class="d-y"></div><div class="d-g"></div><span class="term-title">paulo-victor — profile.ts</span></div>
+      <div class="term-body">
+        <div class="tl"><span class="tk">const</span> <span class="tc">dev</span> <span class="td">= {</span></div>
+        <div class="tl">&nbsp;&nbsp;<span class="tk">name</span><span class="td">:</span> <span class="ts">'Paulo Victor'</span><span class="td">,</span></div>
+        <div class="tl">&nbsp;&nbsp;<span class="tk">role</span><span class="td">:</span> <span class="ts">'Front-End Dev'</span><span class="td">,</span></div>
+        <div class="tl">&nbsp;&nbsp;<span class="tk">location</span><span class="td">:</span> <span class="ts">'Cristo, João Pessoa - PB 🇧🇷'</span><span class="td">,</span></div>
+        <div class="tl">&nbsp;&nbsp;<span class="tk">available</span><span class="td">:</span> <span class="tb">true</span><span class="td">,</span></div>
+        <div class="tl">&nbsp;&nbsp;<span class="tk">stack</span><span class="td">: [</span><span class="ts">'React'</span><span class="td">,</span> <span class="ts">'TS'</span><span class="td">,</span> <span class="ts">'Node'</span><span class="td">],</span></div>
+        <div class="tl">&nbsp;&nbsp;<span class="tk">openTo</span><span class="td">:</span> <span class="ts">'CLT / PJ / Freela'</span></div>
+        <div class="tl"><span class="td">}</span></div>
+        <div class="term-hr"></div>
+        <div class="stat-row">
+          <div class="stat"><div class="n">8+</div><div class="l">Projetos</div></div>
+          <div class="stat"><div class="n">10+</div><div class="l">Tecnologias</div></div>
+          <div class="stat"><div class="n">Git</div><div class="l">Versionamento</div></div>
+          <div class="stat"><div class="n">∞</div><div class="l">Dedicação</div></div>
+        </div>
+        <div class="avail"><span class="pulse"></span>disponível para oportunidades</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <nav class="menu-desktop" aria-label="Navegação principal">
-                <ul>
-                    <li><a href="#hero">Início</a></li>
-                    <li><a href="#sobre-mim">Sobre mim</a></li>
-                    <li><a href="#skills">Habilidades</a></li>
-                    <li><a href="#portfolio">Portfólio</a></li>
-                    <li><a href="#contato" class="btn-nav">Contato</a></li>
-                </ul>
-            </nav>
+<hr class="sep">
 
-            <button type="button" class="btn-menu-mobile" id="btn-menu-mobile" aria-label="Abrir menu"
-                aria-expanded="false" aria-controls="menu-mobile">
-                <i class="bi bi-list" aria-hidden="true"></i>
-            </button>
+<section class="section" id="sobre">
+  <div class="wrap">
+    <div class="sobre-grid">
+      <div class="photo-wrap reveal in">
+        <img src="./Paulo Victor — Front-End Developer_files/download.jpeg" alt="Paulo Victor" class="sphoto">
+        <div class="photo-glow"></div>
+        <div class="photo-tag"><div class="n">2026</div><div class="l">no dev</div></div>
+      </div>
+      <div class="reveal in">
+        <div class="sec-eye">01 · sobre</div>
+        <h2 class="sec-title">Quem sou eu</h2>
+        <div style="margin-top:24px">
+          <p class="sobre-p">Desenvolvedor <strong>Front-End</strong> em formação, com conhecimentos em desenvolvimento Full Stack. Crio aplicações web responsivas com <strong>React, TypeScript, JavaScript, HTML5, CSS3, Node.js e APIs REST</strong>.</p>
+          <p class="sobre-p">Curso <strong>Análise e Desenvolvimento de Sistemas</strong> pela Cruzeiro do Sul Virtual (prev. 12/2026) e a formação <strong>Full Stack pela EBAC</strong> (prev. 04/2026). Desenvolvo projetos próprios e freelancers com foco em performance e experiência do usuário.</p>
+          <p class="sobre-p">Trago ainda um histórico de <strong>gestão administrativa e operacional</strong>, com vivência real em atendimento ao cliente e melhoria de processos — visão de negócio que aplico nas soluções que construo.</p>
+        </div>
+        <div class="chips">
+          <span class="chip hi">disponível</span>
+          <span class="chip hi">Front-End</span>
+          <span class="chip">React</span>
+          <span class="chip">TypeScript</span>
+          <span class="chip">ADS — Cruzeiro do Sul</span>
+          <span class="chip">EBAC Full Stack</span>
+          <span class="chip">Cristo — João Pessoa, PB</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-            <nav class="menu-mobile" id="menu-mobile" aria-label="Menu mobile">
-                <button type="button" class="btn-fechar-menu" aria-label="Fechar menu">
-                    <i class="bi bi-x-lg" aria-hidden="true"></i>
-                </button>
-                <ul>
-                    <li><a href="#hero">Início</a></li>
-                    <li><a href="#sobre-mim">Sobre mim</a></li>
-                    <li><a href="#skills">Habilidades</a></li>
-                    <li><a href="#portfolio">Portfólio</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                </ul>
-            </nav>
+<hr class="sep">
 
+<section class="section" id="skills">
+  <div class="wrap">
+    <div class="reveal in">
+      <div class="sec-eye">02 · stack</div>
+      <h2 class="sec-title">Habilidades técnicas</h2>
+      <p class="sec-desc">Tecnologias que uso para construir produtos do front ao back.</p>
+    </div>
+    <div class="sk-grid">
+      <div class="sk-card reveal in">
+        <div class="sk-top"><div class="sk-cat">Front-end</div><div class="sk-n">// 01</div></div>
+        <div class="sk-items">
+          <span class="sk-item"><img src="./Paulo Victor — Front-End Developer_files/html5-original.svg">HTML5</span>
+          <span class="sk-item"><img src="./Paulo Victor — Front-End Developer_files/css3-original.svg">CSS3</span>
+          <span class="sk-item"><img src="./Paulo Victor — Front-End Developer_files/javascript-original.svg">JavaScript</span>
+          <span class="sk-item"><img src="./Paulo Victor — Front-End Developer_files/typescript-original.svg">TypeScript</span>
+          <span class="sk-item"><img src="./Paulo Victor — Front-End Developer_files/react-original.svg">React</span>
+          <span class="sk-item"><img src="./Paulo Victor — Front-End Developer_files/redux-original.svg">Redux Toolkit</span>
+          <span class="sk-item"><img src="./Paulo Victor — Front-End Developer_files/sass-original.svg">Sass</span>
+          <span class="sk-item"><img src="./Paulo Victor — Front-End Developer_files/bootstrap-original.svg">Bootstrap</span>
+        </div>
+      </div>
+      <div class="sk-card reveal in">
+        <div class="sk-top"><div class="sk-cat">Back-end &amp; Linguagens</div><div class="sk-n">// 02</div></div>
+        <div class="sk-items">
+          <span class="sk-item"><img src="./Paulo Victor — Front-End Developer_files/nodejs-original.svg">Node.js</span>
+          <span class="sk-item"><img src="./Paulo Victor — Front-End Developer_files/express-original.svg" class="inv">Express</span>
+          <span class="sk-item"><img src="./Paulo Victor — Front-End Developer_files/java-original.svg">Java</span>
+          <span class="sk-item">⚡ APIs REST</span>
+        </div>
+      </div>
+      <div class="sk-card reveal in">
+        <div class="sk-top"><div class="sk-cat">Ferramentas</div><div class="sk-n">// 03</div></div>
+        <div class="sk-items">
+          <span class="sk-item"><img src="./Paulo Victor — Front-End Developer_files/git-original.svg">Git</span>
+          <span class="sk-item"><img src="./Paulo Victor — Front-End Developer_files/github-original.svg" class="inv">GitHub</span>
+          <span class="sk-item"><img src="./Paulo Victor — Front-End Developer_files/vitejs-original.svg">Vite</span>
+          <span class="sk-item"><img src="./Paulo Victor — Front-End Developer_files/eslint-original.svg">ESLint</span>
+          <span class="sk-item"><img src="./Paulo Victor — Front-End Developer_files/vscode-original.svg">VS Code</span>
+          <span class="sk-item"><img src="./Paulo Victor — Front-End Developer_files/vercel-original.svg" class="inv">Vercel</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<section class="section" id="projetos">
+  <div class="wrap">
+    <div class="reveal in">
+      <div class="sec-eye">03 · projetos</div>
+      <h2 class="sec-title">Trabalhos em destaque</h2>
+      <p class="sec-desc">Screenshots reais e ao vivo de cada projeto. Passe o mouse para acessar.</p>
+    </div>
+
+    <div class="proj-wrap">
+      <div class="featured reveal in">
+        <div class="f-shot">
+          <img src="./Projeto/site%20thiago%20castro.png" alt="Castro Multimarcas" onerror="this.parentNode.innerHTML=&#39;&lt;div class=&quot;fallback&quot;&gt;&lt;span class=&quot;fb-emoji&quot;&gt;🛍️&lt;/span&gt;&lt;span class=&quot;fb-txt&quot;&gt;full stack app&lt;/span&gt;&lt;/div&gt;&#39;">
+          <div class="f-shot-ov"></div><div class="f-num">01</div>
+        </div>
+        <div class="f-body">
+          <div>
+            <div class="f-tag">★ destaque · 01</div>
+            <div class="f-title">Castro Multimarcas</div>
+            <div class="f-sub">Pedidos Online — Full Stack</div>
+            <p class="f-desc">Plataforma completa de e-commerce com catálogo de produtos, carrinho, gestão de pedidos e painel administrativo. Arquitetura full stack com persistência real em banco de dados.</p>
+            <div class="f-techs">
+              <span class="f-tech"><span class="dot"></span>React</span>
+              <span class="f-tech"><span class="dot"></span>TypeScript</span>
+              <span class="f-tech"><span class="dot"></span>Node.js</span>
+              <span class="f-tech"><span class="dot"></span>PostgreSQL</span>
+              <span class="f-tech"><span class="dot"></span>Git</span>
+            </div>
+          </div>
+          <div class="f-links">
+            <a href="https://app-pedidos-loja-cliente.vercel.app/" target="_blank" class="fl c">↗ ver projeto</a>
+            <a href="https://github.com/PAULO-VICTOR-SILVA-SANTOS/clothing-store-fullstack" target="_blank" class="fl g">&lt;/&gt; github</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-grid">
+        <!-- eFood -->
+        <div class="pc reveal in">
+          <div class="pc-shot">
+            <img src="./Projeto/site%20restaurante.png" alt="eFood" onerror="this.parentNode.querySelector(&#39;.pc-ov&#39;)?.remove();this.outerHTML=&#39;&lt;div class=&quot;pc-fallback&quot;&gt;&lt;span class=&quot;pc-fb-emoji&quot;&gt;🍔&lt;/span&gt;&lt;span class=&quot;pc-fb-txt&quot;&gt;delivery app&lt;/span&gt;&lt;/div&gt;&#39;">
+            <div class="pc-ov">
+              <a href="https://efood-restaurantes-eight.vercel.app/" target="_blank" class="ov-btn c">↗ ver</a>
+              <a href="https://github.com/PAULO-VICTOR-SILVA-SANTOS/efood_restaurantes" target="_blank" class="ov-btn g">github</a>
+            </div>
+          </div>
+          <div class="pc-meta"><span class="pc-num">// 02</span><div class="pc-ico">
+            <a href="https://efood-restaurantes-eight.vercel.app/" target="_blank"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+            <a href="https://github.com/PAULO-VICTOR-SILVA-SANTOS/efood_restaurantes" target="_blank"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"></path></svg></a>
+          </div></div>
+          <div class="pc-body">
+            <div class="pc-title">eFood Restaurantes</div>
+            <div class="pc-sub">Delivery App</div>
+            <p class="pc-desc">Catálogo gastronômico com carrinho funcional e fluxo de checkout, consumo de API REST e formatação monetária pt-BR.</p>
+            <div class="pc-techs"><span class="pc-tech">React</span><span class="pc-tech">TypeScript</span><span class="pc-tech">Redux Toolkit</span><span class="pc-tech">Vite</span></div>
+          </div>
         </div>
 
-    </header>
-
-    <main>
-
-        <section class="hero" id="hero">
-            <div class="interface">
-
-                <div class="img-hero">
-                    <img src="unnamed.webp" alt="Ilustração de Paulo Victor">
-                </div>
-
-                <div class="txt-hero">
-                    <h1>Ideias digitais. <span>Resultados reais!</span></h1>
-                    <p>
-                        Aliando criatividade e lógica para construir o futuro digital. Com background em gestão e foco
-                        total
-                        em desenvolvimento Full Stack, dedico-me a converter requisitos em aplicações reais,
-                        garantindo que cada projeto seja uma solução sólida e funcional.
-                    </p>
-                </div>
-
+        <!-- Disney -->
+        <div class="pc reveal in">
+          <div class="pc-shot">
+            <img src="./Projeto/site%20clone%20disney.png" alt="Clone Disney+" onerror="this.parentNode.querySelector(&#39;.pc-ov&#39;)?.remove();this.outerHTML=&#39;&lt;div class=&quot;pc-fallback&quot;&gt;&lt;span class=&quot;pc-fb-emoji&quot;&gt;🎬&lt;/span&gt;&lt;span class=&quot;pc-fb-txt&quot;&gt;ui clone&lt;/span&gt;&lt;/div&gt;&#39;">
+            <div class="pc-ov">
+              <a href="https://clone-disneyplus-orpin-ten.vercel.app/" target="_blank" class="ov-btn c">↗ ver</a>
+              <a href="https://github.com/PAULO-VICTOR-SILVA-SANTOS/clone_disneyplus" target="_blank" class="ov-btn g">github</a>
             </div>
-        </section>
-
-        <section class="sobre-mim" id="sobre-mim">
-            <div class="interface">
-
-                <div class="txt-sobre">
-
-                    <h2 class="título-section">Sobre <span>mim</span></h2>
-                    <p>
-                        Estou em transição de carreira para Desenvolvimento Full Stack, com histórico em gestão comercial
-                        e atendimento ao cliente. Estou em formação como Desenvolvedor Full Stack pela EBAC e graduando
-                        em Análise e Desenvolvimento de Sistemas pela Cruzeiro do Sul Virtual, com habilidades em HTML5,
-                        CSS3, JavaScript, jQuery, Bootstrap e Git.
-                        Tenho experiência prática em projeto web institucional, com front-end responsivo e versionamento
-                        de código. Busco aprender rápido, entregar soluções digitais que otimizem processos e evoluir
-                        tecnicamente a cada entrega.
-                    </p>
-
-                    <p>
-                        Destaco o projeto da página da Libânia Estética, em que usei HTML5, CSS, Git e fundamentos de
-                        front-end responsivo para criar uma interface intuitiva que apresenta serviços, um cardápio de
-                        conveniência e canais de contato,
-                        melhorando a experiência do usuário e a presença digital do negócio.
-                    </p>
-                    <div>
-                        <a class="github-link" href="https://primeiro-site-estetica.vercel.app/" target="_blank"
-                            rel="noopener noreferrer">
-                            <i class="bi bi-box-arrow-up-right" aria-hidden="true"></i> Ver projeto Libânia Estética
-                        </a>
-                    </div>
-                    <div class="btn-redes">
-                        <a href="https://www.linkedin.com/in/paulo-victor-dev-full-stack" target="_blank"
-                            rel="noopener noreferrer" class="btn-icone" aria-label="LinkedIn"><i
-                                class="bi bi-linkedin" aria-hidden="true"></i></a>
-                        <a href="https://github.com/PAULO-VICTOR-SILVA-SANTOS" target="_blank" rel="noopener noreferrer"
-                            class="btn-icone" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
-                    </div>
-
-                </div>
-
-                <div class="img-sobre">
-                    <img src="./download.jpeg" alt="Paulo Victor">
-                </div>
-
-            </div>
-        </section>
-
-        <section class="skills" id="skills">
-            <div class="interface">
-
-                <h2 class="título-section">Minhas <span>especialidades</span></h2>
-
-                <article>
-                    <div class="box-skills">
-                        <div class="icon-skills">
-                            <img src="icon-website.webp" alt="">
-                            <h3>Criação de <span>sites</span></h3>
-                        </div>
-                        <p>
-                            Desenvolvimento de sites institucionais modernos e totalmente responsivos.
-                            Foco na criação de interfaces intuitivas que fortalecem a presença digital
-                            do seu negócio e facilitam a comunicação com seus clientes, assim como no
-                            projeto Libânia Estética.
-                        </p>
-                    </div>
-
-                    <div class="box-skills">
-                        <div class="icon-skills">
-                            <img src="icon-loja-online.webp" alt="">
-                            <h3>Loja <span>online</span></h3>
-                        </div>
-                        <p>
-                            Criação de plataformas de vendas focadas na experiência do usuário e na
-                            facilidade de navegação. Estruturo catálogos de produtos e cardápios de conveniência
-                            que otimizam o processo de compra e aumentam a conversão de vendas online.
-                        </p>
-                    </div>
-
-                    <div class="box-skills">
-                        <div class="icon-skills">
-                            <img src="icon-marketing-digital.webp" alt="">
-                            <h3>Marketing <span>Digital</span></h3>
-                        </div>
-                        <p>
-                            Integração estratégica entre tecnologia e vendas. Utilizo ferramentas
-                            digitais para otimizar processos de atendimento e automação, garantindo que
-                            sua marca tenha visibilidade e que o contato direto com o cliente seja
-                            rápido e eficiente.
-                        </p>
-                    </div>
-                </article>
-
-                <div class="btn-contato">
-                    <a href="#contato" class="btn-primario">Entre em contato</a>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="portfolio" id="portfolio">
-            <div class="interface">
-                <h2 class="título-section">Meu <span>portfólio</span></h2>
-                <p>
-                    Abaixo apresento uma seleção de projetos que demonstram minha jornada como desenvolvedor
-                    Full Stack. De interfaces institucionais a clones de aplicações complexas,
-                    utilizo tecnologias modernas para construir soluções robustas e intuitivas.
-                </p>
-
-                <div class="portfolio-grids" id="portfolio-grids">
-
-                    <div class="portfolio-container portfolio-container--principal">
-                        <div class="portfolio-item">
-                            <a href="https://site-lugardastintas.vercel.app/" target="_blank" rel="noopener noreferrer">
-                                <div class="portfolio-box projeto1">
-                                    <div class="infor-portfolio">Lugar das Tintas</div>
-                                </div>
-                            </a>
-                            <a class="github-link" href="https://github.com/PAULO-VICTOR-SILVA-SANTOS/site_lugardastintas"
-                                target="_blank" rel="noopener noreferrer">
-                                <i class="bi bi-github" aria-hidden="true"></i> Ver código no GitHub
-                            </a>
-                        </div>
-
-                        <div class="portfolio-item">
-                            <a href="https://primeiro-site-estetica.vercel.app/" target="_blank"
-                                rel="noopener noreferrer">
-                                <div class="portfolio-box projeto2">
-                                    <div class="infor-portfolio">Libânia Estética</div>
-                                </div>
-                            </a>
-                            <a class="github-link"
-                                href="https://github.com/PAULO-VICTOR-SILVA-SANTOS/primeiro_site_estetica" target="_blank"
-                                rel="noopener noreferrer">
-                                <i class="bi bi-github" aria-hidden="true"></i> Ver código no GitHub
-                            </a>
-                        </div>
-
-                        <div class="portfolio-item">
-                            <a href="https://clone-disneyplus-orpin-ten.vercel.app/" target="_blank"
-                                rel="noopener noreferrer">
-                                <div class="portfolio-box projeto3">
-                                    <div class="infor-portfolio">Clone Disney+</div>
-                                </div>
-                            </a>
-                            <a class="github-link" href="https://github.com/PAULO-VICTOR-SILVA-SANTOS/clone_disneyplus"
-                                target="_blank" rel="noopener noreferrer">
-                                <i class="bi bi-github" aria-hidden="true"></i> Ver código no GitHub
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="portfolio-mostrar-acoes">
-                        <button type="button" id="btn-portfolio-toggle" class="btn-mostrar-mais-projetos"
-                            aria-expanded="false" aria-controls="portfolio-secundaria">
-                            Mostrar mais
-                        </button>
-                    </div>
-
-                    <!-- A partir do 4º projeto: oculto até clicar em Mostrar mais -->
-                    <div class="portfolio-container portfolio-container--secundaria" id="portfolio-secundaria"
-                        role="region" aria-label="Mais projetos do portfólio">
-                        <div class="portfolio-item">
-                            <a href="https://efood-restaurantes-eight.vercel.app/" target="_blank"
-                                rel="noopener noreferrer">
-                                <div class="portfolio-box projeto4">
-                                    <div class="infor-portfolio">eFood — Restaurantes</div>
-                                </div>
-                            </a>
-                            <a class="github-link"
-                                href="https://github.com/PAULO-VICTOR-SILVA-SANTOS/efood_restaurantes" target="_blank"
-                                rel="noopener noreferrer">
-                                <i class="bi bi-github" aria-hidden="true"></i> Ver código no GitHub
-                            </a>
-                        </div>
-
-                        <div class="portfolio-item">
-                            <a href="https://app-pedidos-loja-cliente.vercel.app/" target="_blank"
-                                rel="noopener noreferrer">
-                                <div class="portfolio-box projeto5">
-                                    <div class="infor-portfolio">Castro Multimarcas — Pedidos online</div>
-                                </div>
-                            </a>
-                            <a class="github-link"
-                                href="https://github.com/PAULO-VICTOR-SILVA-SANTOS/clothing-store-fullstack"
-                                target="_blank" rel="noopener noreferrer">
-                                <i class="bi bi-github" aria-hidden="true"></i> Ver código no GitHub
-                            </a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <section class="contato" id="contato">
-
-            <div class="interface">
-
-                <div class="txt-contato">
-                    <h2 class="título-section">Entre em <span>contato</span></h2>
-                    <p><i class="bi bi-envelope-at" aria-hidden="true"></i> paulinhovictor852@gmail.com</p>
-                    <p><i class="bi bi-whatsapp" aria-hidden="true"></i> (83) 99915-9349</p>
-                </div>
-
-                <form action="#" method="post">
-                    <label class="visually-hidden" for="nome">Nome completo</label>
-                    <input type="text" name="nome" id="nome" placeholder="Seu nome completo" autocomplete="name">
-
-                    <label class="visually-hidden" for="email">E-mail</label>
-                    <input type="email" name="email" id="email" placeholder="Seu e-mail" autocomplete="email">
-
-                    <div class="tel-proj">
-                        <label class="visually-hidden" for="telefone">WhatsApp</label>
-                        <input type="tel" name="telefone" id="telefone" placeholder="Seu WhatsApp"
-                            autocomplete="tel">
-
-                        <label class="visually-hidden" for="projeto">Tipo de projeto</label>
-                        <input type="text" name="projeto" id="projeto" placeholder="Qual site quer criar?">
-                    </div>
-
-                    <label class="visually-hidden" for="mensagem">Mensagem</label>
-                    <textarea name="mensagem" id="mensagem" placeholder="Fale mais sobre sua ideia"></textarea>
-
-                    <div class="btn-enviar">
-                        <input type="submit" value="Enviar">
-                    </div>
-                </form>
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <footer>
-        <div class="interface">
-
-            <div class="logo-footer">
-                <img src="logo-paulo.png" alt="Logotipo">
-                <p>Todos os direitos reservados.</p>
-            </div>
-
-            <div class="btn-redes">
-                <a href="https://www.linkedin.com/in/paulo-victor-dev-full-stack" target="_blank"
-                    rel="noopener noreferrer" class="btn-icone" aria-label="LinkedIn"><i class="bi bi-linkedin"
-                        aria-hidden="true"></i></a>
-                <a href="https://github.com/PAULO-VICTOR-SILVA-SANTOS" target="_blank" rel="noopener noreferrer"
-                    class="btn-icone" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
-            </div>
-
+          </div>
+          <div class="pc-meta"><span class="pc-num">// 03</span><div class="pc-ico">
+            <a href="https://clone-disneyplus-orpin-ten.vercel.app/" target="_blank"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+            <a href="https://github.com/PAULO-VICTOR-SILVA-SANTOS/clone_disneyplus" target="_blank"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"></path></svg></a>
+          </div></div>
+          <div class="pc-body">
+            <div class="pc-title">Clone Disney+</div>
+            <div class="pc-sub">UI Clone — Streaming</div>
+            <p class="pc-desc">Réplica fiel da landing do Disney+ com carrossel animado, hero responsivo e layout pixel-perfect.</p>
+            <div class="pc-techs"><span class="pc-tech">HTML5</span><span class="pc-tech">CSS3</span><span class="pc-tech">JavaScript</span><span class="pc-tech">Responsivo</span></div>
+          </div>
         </div>
-    </footer>
 
-    <script src="js/menu_mobile.js"></script>
-    <script src="js/portfolio_toggle.js"></script>
+        <!-- Libânia -->
+        <div class="pc reveal in">
+          <div class="pc-shot">
+            <img src="./Projeto/site%20est%C3%A9tica.png" alt="Libânia Estética" onerror="this.parentNode.querySelector(&#39;.pc-ov&#39;)?.remove();this.outerHTML=&#39;&lt;div class=&quot;pc-fallback&quot;&gt;&lt;span class=&quot;pc-fb-emoji&quot;&gt;💅&lt;/span&gt;&lt;span class=&quot;pc-fb-txt&quot;&gt;site institucional&lt;/span&gt;&lt;/div&gt;&#39;">
+            <div class="pc-ov">
+              <a href="https://primeiro-site-estetica.vercel.app/" target="_blank" class="ov-btn c">↗ ver</a>
+              <a href="https://github.com/PAULO-VICTOR-SILVA-SANTOS/primeiro_site_estetica" target="_blank" class="ov-btn g">github</a>
+            </div>
+          </div>
+          <div class="pc-meta"><span class="pc-num">// 04</span><div class="pc-ico">
+            <a href="https://primeiro-site-estetica.vercel.app/" target="_blank"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+            <a href="https://github.com/PAULO-VICTOR-SILVA-SANTOS/primeiro_site_estetica" target="_blank"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"></path></svg></a>
+          </div></div>
+          <div class="pc-body">
+            <div class="pc-title">Libânia Estética</div>
+            <div class="pc-sub">Site Institucional</div>
+            <p class="pc-desc">Interface para negócio real com apresentação de serviços, galeria e canais de contato. Foco em UX.</p>
+            <div class="pc-techs"><span class="pc-tech">HTML5</span><span class="pc-tech">CSS3</span><span class="pc-tech">Git</span><span class="pc-tech">Responsivo</span></div>
+          </div>
+        </div>
 
-</body>
+        <!-- Tintas -->
+        <div class="pc reveal in">
+          <div class="pc-shot">
+            <img src="./Projeto/site%20lugar%20das%20tintas..png" alt="Lugar das Tintas" onerror="this.parentNode.querySelector(&#39;.pc-ov&#39;)?.remove();this.outerHTML=&#39;&lt;div class=&quot;pc-fallback&quot;&gt;&lt;span class=&quot;pc-fb-emoji&quot;&gt;🎨&lt;/span&gt;&lt;span class=&quot;pc-fb-txt&quot;&gt;e-commerce&lt;/span&gt;&lt;/div&gt;&#39;">
+            <div class="pc-ov">
+              <a href="https://site-lugardastintas.vercel.app/" target="_blank" class="ov-btn c">↗ ver</a>
+              <a href="https://github.com/PAULO-VICTOR-SILVA-SANTOS/site_lugardastintas" target="_blank" class="ov-btn g">github</a>
+            </div>
+          </div>
+          <div class="pc-meta"><span class="pc-num">// 05</span><div class="pc-ico">
+            <a href="https://site-lugardastintas.vercel.app/" target="_blank"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+            <a href="https://github.com/PAULO-VICTOR-SILVA-SANTOS/site_lugardastintas" target="_blank"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"></path></svg></a>
+          </div></div>
+          <div class="pc-body">
+            <div class="pc-title">Lugar das Tintas</div>
+            <div class="pc-sub">E-commerce — Varejo</div>
+            <p class="pc-desc">Catálogo online para loja de tintas com layout moderno, responsivo e foco em conversão de vendas.</p>
+            <div class="pc-techs"><span class="pc-tech">HTML5</span><span class="pc-tech">CSS3</span><span class="pc-tech">JavaScript</span><span class="pc-tech">Bootstrap</span></div>
+          </div>
+        </div>
 
-</html>
+        <!-- Oxen TI -->
+        <div class="pc reveal in">
+          <div class="pc-shot">
+            <img src="./Projeto/site%20oxen-ti.png" alt="Oxen TI" onerror="this.parentNode.querySelector(&#39;.pc-ov&#39;)?.remove();this.outerHTML=&#39;&lt;div class=&quot;pc-fallback&quot;&gt;&lt;span class=&quot;pc-fb-emoji&quot;&gt;🖥️&lt;/span&gt;&lt;span class=&quot;pc-fb-txt&quot;&gt;website institucional&lt;/span&gt;&lt;/div&gt;&#39;">
+            <div class="pc-ov">
+              <a href="https://site-oxen-ti.vercel.app/" target="_blank" class="ov-btn c">↗ ver</a>
+              <a href="https://github.com/PAULO-VICTOR-SILVA-SANTOS" target="_blank" class="ov-btn g">github</a>
+            </div>
+          </div>
+          <div class="pc-meta"><span class="pc-num">// 06</span><div class="pc-ico">
+            <a href="https://oxen-ti.vercel.app/" target="_blank"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+            <a href="https://github.com/PAULO-VICTOR-SILVA-SANTOS" target="_blank"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"></path></svg></a>
+          </div></div>
+          <div class="pc-body">
+            <div class="pc-title">Oxen TI</div>
+            <div class="pc-sub">Website Institucional — Cliente Real</div>
+            <p class="pc-desc">Site responsivo para empresa de tecnologia com foco na apresentação de serviços, fortalecimento da presença digital e geração de oportunidades de negócio.</p>
+            <div class="pc-techs"><span class="pc-tech">React</span><span class="pc-tech">TypeScript</span><span class="pc-tech">Vite</span><span class="pc-tech">CSS3</span><span class="pc-tech">Vercel</span></div>
+          </div>
+        </div>
+
+        <!-- PigControl -->
+        <div class="pc reveal in">
+          <div class="pc-shot">
+            <img src="./Projeto/pigcontol.png" alt="PigControl" onerror="this.parentNode.querySelector(&#39;.pc-ov&#39;)?.remove();this.outerHTML=&#39;&lt;div class=&quot;pc-fallback&quot;&gt;&lt;span class=&quot;pc-fb-emoji&quot;&gt;🎨&lt;/span&gt;&lt;span class=&quot;pc-fb-txt&quot;&gt;controle de pigmentos&lt;/span&gt;&lt;/div&gt;&#39;">
+            <div class="pc-ov">
+              <a href="https://pigcontrol-controle-de-pigmentos.vercel.app/" target="_blank" class="ov-btn c">↗ ver</a>
+              <a href="https://github.com/PAULO-VICTOR-SILVA-SANTOS" target="_blank" class="ov-btn g">github</a>
+            </div>
+          </div>
+          <div class="pc-meta"><span class="pc-num">// 07</span><div class="pc-ico">
+            <a href="https://pigcontrol-controle-de-pigmentos.vercel.app/" target="_blank"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+            <a href="https://github.com/PAULO-VICTOR-SILVA-SANTOS" target="_blank"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"></path></svg></a>
+          </div></div>
+          <div class="pc-body">
+            <div class="pc-title">PigControl</div>
+            <div class="pc-sub">Gestão de Estoque — Cliente Real</div>
+            <p class="pc-desc">App web para controle de estoque e cálculo de custos de pigmentos em pintura automotiva. Substitui planilhas manuais por solução centralizada com custo por ml automático.</p>
+            <div class="pc-techs"><span class="pc-tech">React</span><span class="pc-tech">TypeScript</span><span class="pc-tech">Vite</span><span class="pc-tech">LocalStorage</span><span class="pc-tech">Vercel</span></div>
+          </div>
+        </div>
+
+        <!-- Flappy Bird Java -->
+        <div class="pc reveal in">
+          <div class="pc-shot">
+            <img src="./Projeto/flappyBird.png" alt="Flappy Bird" onerror="this.parentNode.querySelector(&#39;.pc-ov&#39;)?.remove();this.outerHTML=&#39;&lt;div class=&quot;pc-fallback&quot;&gt;&lt;span class=&quot;pc-fb-emoji&quot;&gt;🐦&lt;/span&gt;&lt;span class=&quot;pc-fb-txt&quot;&gt;jogo em java&lt;/span&gt;&lt;/div&gt;&#39;">
+            <div class="pc-ov">
+              <a href="https://jogo-flapp-bird.vercel.app/" target="_blank" class="ov-btn c">↗ ver</a>
+              <a href="https://github.com/PAULO-VICTOR-SILVA-SANTOS" target="_blank" class="ov-btn g">github</a>
+            </div>
+          </div>
+          <div class="pc-meta"><span class="pc-num">// 08</span><div class="pc-ico">
+            <a href="https://jogo-flapp-bird.vercel.app/" target="_blank"><svg viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg></a>
+            <a href="https://github.com/PAULO-VICTOR-SILVA-SANTOS" target="_blank"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"></path></svg></a>
+          </div></div>
+          <div class="pc-body">
+            <div class="pc-title">Flappy Bird — Java</div>
+            <div class="pc-sub">Projeto Próprio — POO</div>
+            <p class="pc-desc">Versão do Flappy Bird em Java aplicando Programação Orientada a Objetos, controle de eventos, lógica de colisão e interface gráfica — fortalecendo fundamentos de engenharia de software.</p>
+            <div class="pc-techs"><span class="pc-tech">Java</span><span class="pc-tech">POO</span><span class="pc-tech">Interface Gráfica</span><span class="pc-tech">Lógica de Jogos</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="sep">
+
+<section class="section" id="contato">
+  <div class="wrap">
+    <div class="reveal in">
+      <div class="sec-eye">04 · contato</div>
+      <h2 class="sec-title">Vamos construir algo juntos?</h2>
+    </div>
+    <div class="ct-grid">
+      <div class="reveal in">
+        <p class="ct-title">Pronto para o próximo projeto.</p>
+        <p class="ct-desc">Site, loja online, aplicação Full Stack ou landing page — estou disponível para transformar sua ideia em produto real.</p>
+        <div class="ct-items">
+          <div class="ct-item"><div class="ct-ico">✉</div><div><div class="ct-l">E-mail</div><div class="ct-v">paulinhovictor852@gmail.com</div></div></div>
+          <div class="ct-item"><div class="ct-ico">✆</div><div><div class="ct-l">WhatsApp</div><div class="ct-v">(83) 99915-9349</div></div></div>
+          <div class="ct-item"><div class="ct-ico">in</div><div><div class="ct-l">LinkedIn</div><div class="ct-v">paulo-victor-dev-full-stack</div></div></div>
+          <div class="ct-item"><div class="ct-ico">⌥</div><div><div class="ct-l">GitHub</div><div class="ct-v">PAULO-VICTOR-SILVA-SANTOS</div></div></div>
+        </div>
+      </div>
+      <div class="ct-form reveal in">
+        <div class="frow">
+          <div class="fg"><label>nome</label><input type="text" placeholder="Seu nome"></div>
+          <div class="fg"><label>e-mail</label><input type="email" placeholder="seu@email.com"></div>
+        </div>
+        <div class="frow">
+          <div class="fg"><label>whatsapp</label><input type="tel" placeholder="(xx) xxxxx-xxxx"></div>
+          <div class="fg"><label>projeto</label><select><option>Site institucional</option><option>Loja online</option><option>Aplicação Full Stack</option><option>Landing page</option><option>Outro</option></select></div>
+        </div>
+        <div class="fg"><label>mensagem</label><textarea placeholder="Conte sobre o projeto..."></textarea></div>
+        <button class="btn-send">send_message() →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="f-logo">~/paulo-victor.dev</div>
+  <div class="f-copy">© 2025 · designed &amp; built by Paulo Victor</div>
+  <div class="f-links">
+    <a href="https://github.com/PAULO-VICTOR-SILVA-SANTOS" target="_blank">github</a>
+    <a href="https://linkedin.com/in/paulo-victor-dev-full-stack" target="_blank">linkedin</a>
+    <a href="mailto:paulinhovictor852@gmail.com">email</a>
+  </div>
+</footer>
+
+<script>
+// smooth scroll
+document.querySelectorAll('[data-go]').forEach(b=>{
+  b.addEventListener('click',e=>{e.preventDefault();document.getElementById(b.dataset.go)?.scrollIntoView({behavior:'smooth'})});
+});
+
+// active nav
+const ids=['hero','sobre','skills','projetos','contato'];
+const navBtns=document.querySelectorAll('.nl');
+window.addEventListener('scroll',()=>{
+  let cur='hero';
+  ids.forEach(id=>{const el=document.getElementById(id);if(el&&window.scrollY>=el.offsetTop-90)cur=id;});
+  navBtns.forEach(b=>b.classList.toggle('on',b.dataset.go===cur));
+},{passive:true});
+
+// typed role
+const roles=['Front-End Developer','React Developer','TypeScript Developer','Construindo soluções reais'];
+let ri=0,ti=0,del=false;
+const typed=document.getElementById('typed');
+(function tick(){
+  const t=roles[ri];
+  if(!del&&ti<t.length){typed.textContent=t.slice(0,++ti);setTimeout(tick,80);}
+  else if(!del&&ti===t.length){del=true;setTimeout(tick,1900);}
+  else if(del&&ti>0){typed.textContent=t.slice(0,--ti);setTimeout(tick,42);}
+  else{del=false;ri=(ri+1)%roles.length;setTimeout(tick,300);}
+})();
+
+// reveal
+const io=new IntersectionObserver(es=>es.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('in'),(i%4)*90);}),{threshold:0.07});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+
+</body></html>
